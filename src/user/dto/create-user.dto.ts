@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsPositive, Max, isPositive } from "class-validator";
+import { IsNotEmpty, IsNumber, IsPositive, IsString, Max, isPositive,Min } from "class-validator";
 
 export class CreateUserDto {
     
@@ -9,8 +9,10 @@ export class CreateUserDto {
     @IsNumber()
     @IsPositive()
     @Max(120)
+    @Min(18)
     age:number;
 
     @IsNotEmpty()
+    @IsString()
     city:string;
 }
